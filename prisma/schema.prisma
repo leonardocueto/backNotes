@@ -8,11 +8,11 @@ datasource db {
 }
 
 model Note {
-  id         Int      @id @default(autoincrement())
-  Note       String
-  CategoryId Int
-  category   Category @relation(fields: [CategoryId], references: [id])
-  archive    Int
+  id         Int       @id @default(autoincrement())
+  note       String
+  categoryId Int?
+  category   Category? @relation(fields: [categoryId], references: [id])
+  archive    Boolean
 }
 
 model Category {
