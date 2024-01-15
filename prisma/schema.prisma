@@ -9,6 +9,7 @@ datasource db {
 
 model Note {
   id         Int       @id @default(autoincrement())
+  name       String
   note       String
   categoryId Int?
   category   Category? @relation(fields: [categoryId], references: [id])
